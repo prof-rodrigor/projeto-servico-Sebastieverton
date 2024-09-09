@@ -1,5 +1,5 @@
 # sua connection string do MongoDB:
-mongodb.connectionString=
+mongodb.connectionString= mongodb+srv://EvertonGreed:aulaapsbanco@evertonverde.bae87.mongodb.net/?retryWrites=true&w=majority&appName=Evertonverde
 
 porta.servidor=8001
 servico.ping.host=http://localhost:8001
