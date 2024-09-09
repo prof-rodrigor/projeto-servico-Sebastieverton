@@ -1,6 +1,0 @@
-# sua connection string do MongoDB:
-mongodb.connectionString=
-
-porta.servidor=8001
-servico.ping.host=http://localhost:8001
-servico.nome="participantes - exemplo"
