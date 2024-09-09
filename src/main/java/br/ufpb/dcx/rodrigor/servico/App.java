@@ -25,7 +25,7 @@ public class App {
 
     private static final int PORTA_PADRAO = 8000;
 
-    //Propriedades do application.properties:
+    //Propriedades do application.properties.exemplo:
     private static final String PROP_PORTA_SERVIDOR = "porta.servidor";
     private static final String PROP_MONGODB_CONNECTION_STRING = "mongodb.connectionString";
     private static final String SERVICO_NOME = "servico.nome";
@@ -183,9 +183,9 @@ public class App {
 
     private MongoDBRepository inicializarMongoDB() {
         String connectionString = propriedades.getProperty(PROP_MONGODB_CONNECTION_STRING);
-        logger.info("Lendo string de conexão ao MongoDB a partir do application.properties");
+        logger.info("Lendo string de conexão ao MongoDB a partir do application.properties.exemplo");
         if (connectionString == null) {
-            logger.error("O string de conexão ao MongoDB não foi definido no arquivo /src/main/resources/application.properties");
+            logger.error("O string de conexão ao MongoDB não foi definido no arquivo /src/main/resources/application.properties.exemplo");
             logger.error("Defina a propriedade '{}' no arquivo de propriedades", PROP_MONGODB_CONNECTION_STRING);
             System.exit(1);
         }
@@ -203,15 +203,15 @@ public class App {
 
     private Properties carregarPropriedades() {
         Properties prop = new Properties();
-        try (InputStream input = App.class.getClassLoader().getResourceAsStream("application.properties")) {
+        try (InputStream input = App.class.getClassLoader().getResourceAsStream("application.properties.exemplo")) {
             if(input == null){
-                logger.error("Arquivo de propriedades /src/main/resources/application.properties não encontrado");
-                logger.error("Use o arquivo application.properties.examplo como base para criar o arquivo application.properties");
+                logger.error("Arquivo de propriedades /src/main/resources/application.properties.exemplo não encontrado");
+                logger.error("Use o arquivo application.properties.exemplo.examplo como base para criar o arquivo application.properties.exemplo");
                 System.exit(1);
             }
             prop.load(input);
         } catch (IOException ex) {
-            logger.error("Erro ao carregar o arquivo de propriedades /src/main/resources/application.properties", ex);
+            logger.error("Erro ao carregar o arquivo de propriedades /src/main/resources/application.properties.exemplo", ex);
             System.exit(1);
         }
         return prop;
